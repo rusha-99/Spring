@@ -5,6 +5,8 @@ import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 // RESTful controller - (UserController) this class is responsible for handling HTTP req and returning HTTP Responses
 //The return values from your controller methods are automatically converted into JSON and included in the HTTP response body.
@@ -15,9 +17,14 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+    @GetMapping ("/getUsers")
+    public List<UserDTO> getUser(){
+        return userService.getAllUsers();
+    }
+
     @GetMapping ("/getUser")
-    public String getUser(){
-        return "Tharusha Pathirana";
+    public List<UserDTO> getUserId(){
+        return userService.getUserId(1);
     }
 
     @PostMapping("/saveUser")
