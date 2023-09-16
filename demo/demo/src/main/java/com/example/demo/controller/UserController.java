@@ -45,5 +45,13 @@ public class UserController {
         return userService.delete(userDTO);
     }
 
+    //custom fuctions
+
+    //deleteuserbyid
+
+    @DeleteMapping("/deleteUser/1")
+    public boolean deleteUserById(){
+        return userService.deleteUserById(1);
+    }
 
 }

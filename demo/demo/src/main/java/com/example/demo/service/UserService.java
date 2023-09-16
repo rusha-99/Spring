@@ -45,4 +45,10 @@ public class UserService {
         return true;
      }
 
+    public boolean deleteUserById(int id){
+
+       userRepo.deleteById(1);
+        return true;
+    }
+
 }
