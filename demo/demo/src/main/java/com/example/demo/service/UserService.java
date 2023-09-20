@@ -51,4 +51,8 @@ public class UserService {
         return true;
     }
 
+    //user id -> user details
+    //select * from user where id = 1
+    
+
 }
